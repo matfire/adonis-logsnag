@@ -13,15 +13,20 @@
 */
 
 import ConfigureCommand from '@adonisjs/core/commands/configure'
+import { stubsRoot } from './stubs/main.js'
 
 export async function configure(_command: ConfigureCommand) {
   const codemods = await _command.createCodemods()
   await codemods.defineEnvValidations({
-    leadingComment: "Logsnag environment variables",
+    leadingComment: 'Logsnag environment variables',
     variables: {
       LOGSNAG_TOKEN: 'Env.schema.string()',
-      LOGSNAG_PROJECT: 'Env.schema.string()'
-    }
+      LOGSNAG_PROJECT: 'Env.schema.string()',
+    },
   })
-  await codemods.defineEnvVariables({ "LOGSNAG_TOKEN": "", "LOGSNAG_PROJECT": "" })
+  await codemods.defineEnvVariables({ LOGSNAG_TOKEN: '', LOGSNAG_PROJECT: '' })
+  await codemods.makeUsingStub(stubsRoot, 'config/logsnag.stub', {})
+  await codemods.updateRcFile((rc) => {
+    rc.addProvider('@matfire/adonis-logsnag/logsnag_provider')
+  })
 }

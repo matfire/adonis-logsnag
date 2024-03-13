@@ -1,4 +1,4 @@
 export interface LogsnagConfig {
-  project: string;
-  token: string;
+  project: string
+  token: string
 }

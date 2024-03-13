@@ -14,7 +14,8 @@
   ],
   "exports": {
     ".": "./build/index.js",
-    "./types": "./build/src/types.js"
+    "./types": "./build/src/types/main.js",
+    "./logsnag_provider": "./build/providers/logsnag_provider.js"
   },
   "scripts": {
     "clean": "del-cli build",
@@ -55,7 +56,8 @@
     "typescript": "^5.4.2"
   },
   "peerDependencies": {
-    "@adonisjs/core": "^6.2.0"
+    "@adonisjs/core": "^6.2.0",
+    "@logsnag/node": "^1.0.1"
   },
   "publishConfig": {
     "access": "public",
