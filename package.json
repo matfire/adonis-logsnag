@@ -1,7 +1,7 @@
 {
   "name": "@matfire/adonis-logsnag",
   "description": "",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "engines": {
     "node": ">=20.6.0"
   },
@@ -18,20 +18,18 @@
     "./logsnag_provider": "./build/providers/logsnag_provider.js"
   },
   "scripts": {
+    "build": "npm run compile",
     "clean": "del-cli build",
-    "copy:templates": "copyfiles \"stubs/**/*.stub\" build",
-    "typecheck": "tsc --noEmit",
-    "lint": "eslint . --ext=.ts",
+    "compile": "npm run clean && tsc",
+    "copy:templates": "copyfiles \"stubs/**/**/*.stub\" build",
     "format": "prettier --write .",
-    "quick:test": "node --import=./tsnode.esm.js --enable-source-maps bin/test.ts",
+    "lint": "eslint . --ext=.ts",
+    "postcompile": "npm run copy:templates",
+    "precompile": "npm run lint",
+    "prepublishOnly": "npm run build",
     "pretest": "npm run lint",
-    "test": "c8 npm run quick:test",
-    "prebuild": "npm run lint && npm run clean",
-    "build": "tsc",
-    "postbuild": "npm run copy:templates",
-    "release": "np",
-    "version": "npm run build",
-    "prepublishOnly": "npm run build"
+    "typecheck": "tsc --noEmit",
+    "version": "npm run build"
   },
   "keywords": [],
   "author": "",
