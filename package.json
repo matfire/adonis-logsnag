@@ -1,7 +1,7 @@
 {
   "name": "@matfire/adonis-logsnag",
-  "description": "",
-  "version": "0.1.0",
+  "description": "expose logsnag in a controller's http context",
+  "version": "0.2.0",
   "engines": {
     "node": ">=20.6.0"
   },
@@ -31,8 +31,13 @@
     "typecheck": "tsc --noEmit",
     "version": "npm run build"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": ["adonisjs", "logsnag", "plugin", "adonis6"],
+  "author": "Matteo Gassend",
+  "homepage":"https://github.com/matfire/adonis-logsnag",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/matfire/adonis-logsnag"
+  },
   "license": "MIT",
   "devDependencies": {
     "@adonisjs/assembler": "^7.2.3",
