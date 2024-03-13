@@ -1,0 +1,11 @@
+{{{
+  exports({to: app.configPath('logsnag.ts')})
+}}}
+
+import {defineConfig} from "@matfire/adonis-logsnag"
+import env from '#start/env'
+
+const logsnagConfig = defineConfig({
+  token: env.get("LOGSNAG_TOKEN"),
+  project: env.get("LOGSNAG_PROJECT")
+})
