@@ -24,5 +24,4 @@ export async function configure(_command: ConfigureCommand) {
     }
   })
   await codemods.defineEnvVariables({ "LOGSNAG_TOKEN": "", "LOGSNAG_PROJECT": "" })
-
 }
