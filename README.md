@@ -1,7 +1,7 @@
 # Adonis Logsnag
 
-![NPM Version](https://img.shields.io/npm/v/%40matfire%2Fadonis-logsnag)
-![GitHub License](https://img.shields.io/github/license/matfire/adonis-logsnag)
+![NPM Version](https://img.shields.io/npm/v/%40matfire%2Fadonis-logsnag?style=for-the-badge)
+![GitHub License](https://img.shields.io/github/license/matfire/adonis-logsnag?style=for-the-badge)
 A package to expose a [logsnag](https://logsnag.com) instance inside AdonisJS's http handler.
 
 ## Install
